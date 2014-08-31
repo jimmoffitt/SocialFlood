@@ -1,4 +1,9 @@
 First #BoulderFlood tweets
+
+<blockquote class="twitter-tweet" lang="en"><p>2 solid days of rain don&#39;t want to pack my flip flops away yet <a href="https://twitter.com/hashtag/boulderflood?src=hash">#boulderflood</a> <a href="https://twitter.com/hashtag/FeelsLikeHome?src=hash">#FeelsLikeHome</a></p>&mdash; kathy symes (@kathysymes) <a href="https://twitter.com/kathysymes/statuses/377807343813414912">September 11, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 ```
 2013-09-11 14:54:24	http://twitter.com/kathysymes/statuses/377807343813414912	2 solid days of rain don't want to pack my flip flops away yet #boulderflood #FeelsLikeHome
 2013-09-11 15:07:07	http://twitter.com/WackerAndy/statuses/377810541286535168	Rain for a second day? #boulderflood
