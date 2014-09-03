@@ -39,14 +39,18 @@
 2013-09-12 10:49:21	http://twitter.com/TimesCall/statuses/378108061233074176	Anyone needing help with evacuation is asked to call #Longmont Communications Center non-emergency number, 303-651-8501. #LongmontFlood
 ```
 
+```
+Geo-tagged Media tweets
+```
 
+Xhttp://twitter.com/SLWargaming/statuses/377700103433506816
+Xhttp://twitter.com/lcpartstudio/statuses/377787745172987904
 
-link
-http://twitter.com/SLWargaming/statuses/377700103433506816
-http://twitter.com/lcpartstudio/statuses/377787745172987904
 http://twitter.com/alexbrowneyoung/statuses/377790624034222082
-http://twitter.com/impatrickscott/statuses/377795084059934722
-http://twitter.com/HeyyyR/statuses/377809737137799168
+
+Xhttp://twitter.com/impatrickscott/statuses/377795084059934722
+Xhttp://twitter.com/HeyyyR/statuses/377809737137799168
+
 http://twitter.com/DenverCP/statuses/377811714412380161
 http://twitter.com/aepeeper/statuses/377812121167622144
 http://twitter.com/carsonchristen/statuses/377812182760951808
