@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>query favorites</string>
+	<key>queryFavorites</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>HashTag counts</string>
+			<key>query</key>
+			<string>SELECT
+    h.activity_id, COUNT(*) as `count`, a.`body`
+FROM
+    hashtags h, activities a
+WHERE 
+    h.activity_id = a.activity_id
+    AND a.posted_at &gt; '2013-09-11 00:00:00'
+GROUP BY
+    h.activity_id
+HAVING 
+    COUNT(*) &gt; 3 AND COUNT(*) &lt; 8  
+ORDER by `count` DESC
+LIMIT 20000;  
+</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>HashTag Counts</string>
+			<key>query</key>
+			<string>SELECT COUNT(*)
+FROM hashtags
+WHERE hashtag = "BoulderFlood";
+
+SELECT COUNT(*)
+FROM hashtags
+WHERE hashtag = "COFlood";
+</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>15-min time-series</string>
+			<key>query</key>
+			<string>SELECT FROM_UNIXTIME(
+         FLOOR(UNIX_TIMESTAMP(`posted_at`)/900)*900
+                    ) AS timeslice
+     , COUNT(*) AS mycount
+  FROM SocialFlood_development.activities
+GROUP 
+    BY timeslice;</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Hourly time-series</string>
+			<key>query</key>
+			<string>#hourly time-series
+SELECT CONCAT('2014-',LPAD(MONTH(posted_at),2,'0'), '-',LPAD(DAY(posted_at),2,'0'), '-', LPAD(HOUR(posted_at),2,'0'),':00') AS 'Time',COUNT(*) 
+  FROM SocialFlood_development.activities
+ GROUP BY MONTH(posted_at) ASC, DAY(posted_at) ASC, HOUR(posted_at) ASC
+LIMIT 3000;
+
+</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Simple COUNTS</string>
+			<key>query</key>
+			<string>SELECT COUNT(*) FROM activities
+WHERE posted_at &gt; '2013-08-10 00:06:00';</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>BoulderOEM followers</string>
+			<key>query</key>
+			<string>SELECT a.posted_at, a.followers_count 
+FROM activities a, actors
+WHERE a.actor_id = actors.actor_id
+AND actors.handle = "BoulderOEM";</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Hourly Hashtags</string>
+			<key>query</key>
+			<string>
+#hourly hashtag count time-series
+SELECT CONCAT('2014-',LPAD(MONTH(a.posted_at),2,'0'), '-',LPAD(DAY(a.posted_at),2,'0'), '-', LPAD(HOUR(a.posted_at),2,'0'),':00') AS 'Time',COUNT(*) 
+  FROM activities a, hashtags h
+ WHERE a.activity_id = h.activity_id
+ AND h.hashtag = "BoulderFlood"
+ GROUP BY MONTH(a.posted_at) ASC, DAY(a.posted_at) ASC, HOUR(a.posted_at) ASC
+LIMIT 3000;
+
+
+
+
+
+</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>HashTag time-series (15-min and Hourly)</string>
+			<key>query</key>
+			<string>
+#hourly hashtag count time-series
+SELECT CONCAT('2014-',LPAD(MONTH(a.posted_at),2,'0'), '-',LPAD(DAY(a.posted_at),2,'0'), '-', LPAD(HOUR(a.posted_at),2,'0'),':00') AS 'Time',COUNT(*) 
+  FROM activities a, hashtags h
+ WHERE a.activity_id = h.activity_id
+ AND h.hashtag = "BoulderFlood"
+ GROUP BY MONTH(a.posted_at) ASC, DAY(a.posted_at) ASC, HOUR(a.posted_at) ASC
+LIMIT 3000;
+
+#15-minute hashtag count time-series
+SELECT FROM_UNIXTIME(
+         FLOOR(UNIX_TIMESTAMP(a.`posted_at`)/900)*900
+                    ) AS timeslice
+     , COUNT(*) AS mycount
+FROM activities a, hashtags h
+WHERE
+	a.activity_id = h.activity_id
+	AND h.hashtag = "BoulderFlood" 
+GROUP 
+    BY timeslice;
+
+
+
+
+
+</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Result counts</string>
+			<key>query</key>
+			<string>
+#hourly hashtag count time-series
+SELECT CONCAT('2014-',LPAD(MONTH(a.posted_at),2,'0'), '-',LPAD(DAY(a.posted_at),2,'0'), '-', LPAD(HOUR(a.posted_at),2,'0'),':00') AS 'Time',COUNT(*) 
+  FROM activities a, hashtags h
+ WHERE a.activity_id = h.activity_id
+ AND h.hashtag = "BoulderFlood"
+ GROUP BY MONTH(a.posted_at) ASC, DAY(a.posted_at) ASC, HOUR(a.posted_at) ASC
+LIMIT 3000;
+
+#15-minute hashtag count time-series
+SELECT FROM_UNIXTIME(
+         FLOOR(UNIX_TIMESTAMP(a.`posted_at`)/900)*900
+                    ) AS timeslice
+     , COUNT(*) AS mycount
+FROM activities a, hashtags h
+WHERE
+	a.activity_id = h.activity_id
+	AND (h.hashtag LIKE "%Flood%")
+GROUP 
+    BY timeslice;
+
+
+
+SELECT count(*) FROM activities
+WHERE posted_at &gt; '2013-11-28 00:00:00'
+AND posted_at &lt;'2013-11-28 06:00:00';
+
+
+SELECT COUNT(*)
+FROM activities;
+
+
+#6100 geo-tagged tweets in region
+SELECT COUNT(*)
+FROM activities
+WHERE (`long` &gt; -105.65 AND `long` &lt; -104.6)
+AND (`lat` &gt; 39.87 AND `lat` &lt; 40.45) ;
+
+
+#807 with media or instagram links from region 
+SELECT COUNT(*)
+FROM activities
+WHERE (`long` &gt; -105.65 AND `long` &lt; -104.6)
+AND (`lat` &gt; 39.87 AND `lat` &lt; 40.45) 
+AND (media IS NOT NULL OR urls LIKE '%instagram%')
+AND posted_at &gt; '2013-09-10 06:00:00'
+AND posted_at &lt; '2013-09-17 06:00:00';
+
+#2200 without media/instagram (so 3000 total)
+SELECT COUNT(*)
+FROM activities
+WHERE (`long` &gt; -105.65 AND `long` &lt; -104.6)
+AND (`lat` &gt; 39.87 AND `lat` &lt; 40.45) 
+AND posted_at &gt; '2013-09-10 06:00:00'
+AND posted_at &lt; '2013-09-17 06:00:00';
+
+
+#477 with media or instagram links from region after 9/17
+SELECT COUNT(*)
+FROM activities
+WHERE (`long` &gt; -105.65 AND `long` &lt; -104.6)
+AND (`lat` &gt; 39.87 AND `lat` &lt; 40.45) 
+AND (media IS NOT NULL OR urls LIKE '%instagram%')
+AND posted_at &gt; '2013-09-17 06:00:00';
+
+
+
+SELECT urls
+FROM activities
+WHERE (`long` &gt; -105.65 AND `long` &lt; -104.6)
+AND (`lat` &gt; 39.87 AND `lat` &lt; 40.45) 
+AND (urls IS NOT NULL);
+
+
+
+
+</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
