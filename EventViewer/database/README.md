@@ -1,3 +1,4 @@
+Keywords: Ruby ActiveRecord, MySQL
 
 Database details for the EventViewer project:
 
