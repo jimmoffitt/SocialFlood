@@ -1,0 +1,39 @@
+#Local environment settings: databases, web servers, etc.
+event_viewer:
+  include_twitter_data: true
+  include_hashtag_stats: true
+
+external_data:
+  include_external_data: false
+  alias: hydro
+
+event_details:
+  start_date: 2013-09-11 00:00:00
+  end_date: 2013-09-18 00:00:00
+  interval: 60 #minutes
+
+  #Profile Geo parameters.
+  profile_region: Colorado
+  profile_west: -105.6336
+  profile_east: -104.2608
+  profile_south: 39.68
+  profile_north: 40.6275
+ 
+  #Tweet Geo parameters.
+  tweet_west: -105.6336
+  tweet_east: -104.2608
+  tweet_south: 39.68
+  tweet_north: 40.6275
+
+database:
+  type: mysql
+  host: localhost
+  port: 3306
+  #Note: currently all PowerTrack example clients share a common database schema.
+  schema: flood_development
+  user_name: 
+  password_encoded:
+  #password:
+
+
+
