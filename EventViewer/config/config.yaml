@@ -2,10 +2,12 @@
 event_viewer:
   include_twitter_data: true
   include_hashtag_stats: true
+  include_external_data: true
 
 external_data:
-  include_external_data: false
   alias: hydro
+  rain_site_list: 1110,4050,4070,4170,4220,4240,4360,4550,4830,4870
+  stage_site_list: 10017,10018,10021,4830,4390,4870,4430,4410,4580,4590
 
 event_details:
   start_date: 2013-09-11 00:00:00
