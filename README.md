@@ -12,8 +12,7 @@ The research behind these blog posts involved a variety of software tools that h
 - https://blog.gnip.com/tweeting-rain-part-4-tweets-2013-colorado-flood/
 
 
-Yeah, I have a strong interest in flood warning software. [This](https://www.onerain.com/solutions/diadvisor) was something I focused on for over ten years... I also helped build data services that drive [this family of web-based early-warning systems](https://www.onerain.com/contrail-hydrologic-software).
-
+Yeah, I have a strong interest in flood warning software. [This](https://www.onerain.com/solutions/diadvisor) was something I focused on for over ten years... I helped build data services that drive [this family of web-based early-warning systems](https://www.onerain.com/contrail-hydrologic-software). Those services focuses on a API for data and metadata exchange, based on a family of Java Servlets. Also developed backend Java apps that provided alarm and notification services.
 
 
 
