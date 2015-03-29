@@ -1,7 +1,7 @@
 class ActiveRecordClient
 
-  attr_accessor :database_adapter, :db_host, :db_port, :schema, :db_username, :db_password,
-                :sql, :time
+  attr_accessor :database_adapter, :db_host, :db_port, :schema, :db_username, :db_password
+
 
   def get_database_config(config_file)
 
@@ -36,8 +36,6 @@ class ActiveRecordClient
     #@time = TimeHelpers.new
 
     #local database for storing activity data...
-
-    @sql = TweetSql.new
 
     @database_adapter = 'mysql' #current default.
 
