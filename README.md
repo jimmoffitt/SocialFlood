@@ -1,8 +1,10 @@
 SocialFlood
 ===========
-A collection of things related to display and analysis around the Boulder Flood of 2013.
+A collection of things related to display and analysis around the 2013 Colorado Flood.
 
 I posted a series of blog posts that focued on two of my professional interests: early warning systems and Twitter.
+
+The research behind these blog posts involved a variety of software tools that helped harvest both Twitter and meteorlogical data, store that data in a MySQL database, and then perform the time-series analysis presented in the posts:
 
 - https://blog.gnip.com/tweeting-in-the-rain/
 - https://blog.gnip.com/tweeting-in-the-rain-part-2/
