@@ -12,7 +12,19 @@ The research behind these blog posts involved a variety of software tools that h
 - https://blog.gnip.com/tweeting-rain-part-4-tweets-2013-colorado-flood/
 
 
-Yeah, I have a strong interest in flood warning software. [This](https://www.onerain.com/solutions/diadvisor) was something I focused on for over ten years... I helped build data services that drive [this family of web-based early-warning systems](https://www.onerain.com/contrail-hydrologic-software). Those services focuses on a API for data and metadata exchange, based on a family of Java Servlets. Also developed back-end Java apps that provided alarm and notification services.
+So far these tools have fallen out of this effort:
+
++ EventBinner: Ruby code that pulls data from MySQL and outputs event (Geo)JSON data.  Combines Twitter and 'external' data into an integrated source file for project viewers. 
++ EventViewer: Web map-based event viewer. Source 'maperator' project lives here: https://github.com/blehman/maperator
++ EventPlots: prototype for building d3 time-series plots of event.
+
+
+
+
+
+
+
+Yeah, I have a strong interest in flood warning systems and software. [This](https://www.onerain.com/solutions/diadvisor) was something I focused on for over ten years... I helped build data services that drive [this family of web-based early-warning systems](https://www.onerain.com/contrail-hydrologic-software). Those services focuses on a API for data and metadata exchange, based on a family of Java Servlets. Also developed back-end Java apps that provided alarm and notification services.
 
 
 

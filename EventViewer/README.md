@@ -1,12 +1,11 @@
 
 # EventViewer
 
-Prototype of a general 'event viewer' for events that have unfolded on Twitter.
-
-First use-case is the 2013 Colorado Flood.
+* Prototype of a general 'event viewer' for events that have unfolded on Twitter.
+* First use-case is the 2013 Colorado Flood. 
 
 Consists of:
-+ Display 'layer' being prototypes at https://github.com/blehman/maperator
++ Display 'layer' being prototyped at https://github.com/blehman/maperator
 + Display is based on JSON dataset produced by FloodBinner
   + JSON dataset consists of several features:  
     + Time-series of geo JSON tweet.
