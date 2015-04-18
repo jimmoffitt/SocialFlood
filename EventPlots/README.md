@@ -14,6 +14,10 @@ This project: sample code for building event plots.
 
 
 
+  ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventPlots/output/eventPlots_v1.png)
+
+
+
 ## Process:
 1. Talk about the final viz, collect data, talk about the final viz, format  
 data, talk about the final viz, add 3rd party data, reformat data, ...  
