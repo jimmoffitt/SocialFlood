@@ -18,7 +18,7 @@ So far these tools have fallen out of this effort:
 + EventViewer: Web map-based event viewer. Source 'maperator' project lives here: https://github.com/blehman/maperator
 + EventPlots: prototype for building d3 time-series plots of event.
 
-![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventViewer/imgs/EventViewer_v1.png)
+![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventViewer/imgs/EventTools.png)
 
 Yeah, I have a strong interest in flood warning systems and software. [This](https://www.onerain.com/solutions/diadvisor) was something I focused on for over ten years... I helped build data services that drive [this family of web-based early-warning systems](https://www.onerain.com/contrail-hydrologic-software). Those services focuses on a API for data and metadata exchange, based on a family of Java Servlets. Also developed back-end Java apps that provided alarm and notification services.
 
