@@ -27,6 +27,8 @@
 ### Example JSON Schema
 ** Subject to change**
 
+![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/FloodBinner/docs/exampleSchema.png)
+
 
 
 ### "External Data" details.
