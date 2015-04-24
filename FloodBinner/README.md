@@ -41,7 +41,7 @@
 ### Configuration details
 
 ```
-#Local environment settings: databases, web servers, etc.
+#JSON Dataset options:
 event_viewer:
   include_twitter_data: true
   include_hashtag_stats: true
