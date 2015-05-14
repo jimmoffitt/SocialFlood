@@ -3,29 +3,22 @@
 ### Overview
 
 * Generates (Geo)JSON data for a general 'event viewer' prototype for multi-day events that have unfolded on Twitter.
+* First use-case is the 2013 Colorado Flood.
+
 * Bins Tweet and External data into a common dataset with three root keys/hives:
   * 'external_metadata': stores metadata of external dataset, such as site name and geo location. 
   * 'stats': Tweet stats, such as number in source data
-   * ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_global_stats.png) 
-  * 'interval-data': time-series keys with 'YYYY-MM-DD HH:MM' format, each having an 'interval' value.
-   
-  
+  * 'time-series': time-series keys with 'YYYY-MM-DD HH:MM' format, each having an 'interval' value.
+
         ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_root_keys.png)
     
-* 'interval' payload: 
- * 'tweets_geo_with_media'
- * 'tweets_profile_with_media'
- * 'tweets_geo_without_media'
- * 'external_data'
- * 'stats'     
+
+* Root/Global 'stats' payload: 
+ * ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_global_stats.png)  
+
+* 'time-series' payload:
+ * ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_time_series.png)   
  
-        ![]https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_interval_data.png)  
-
-
-
-
-  
-* First use-case is the 2013 Colorado Flood.
 
 * Geo Display 'layer' being prototyped at https://github.com/blehman/maperator (and forked here: )
  
