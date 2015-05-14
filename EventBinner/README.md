@@ -41,6 +41,9 @@
      
 + External data site names with spaces/punctuation are transformed to JSON friendly keys.
 
+#### Current To-dos:
++ Add JSON/GeoJSON option to 'external' data?
+
 
 ### Example JSON Schema
 ** Subject to change**
