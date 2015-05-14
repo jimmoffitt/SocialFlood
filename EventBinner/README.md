@@ -6,10 +6,11 @@
 * Bins Tweet and External data into a common dataset with three root keys/hives:
   * 'external_metadata': stores metadata of external dataset, such as site name and geo location. 
   * 'stats': Tweet stats, such as number in source data
+   * ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_global_stats.png) 
   * 'interval-data': time-series keys with 'YYYY-MM-DD HH:MM' format, each having an 'interval' value.
-  * 
+   
   
-![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_root_keys.png)
+        ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_root_keys.png)
     
 * 'interval' payload: 
  * 'tweets_geo_with_media'
@@ -17,7 +18,11 @@
  * 'tweets_geo_without_media'
  * 'external_data'
  * 'stats'     
-  
+ 
+        ![]https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_interval_data.png)  
+
+
+
 
   
 * First use-case is the 2013 Colorado Flood.
@@ -103,3 +108,136 @@ database:
   user_name: 
   password_encoded:
 ```
+
+### Database Schema Details
+
+Activities table:
+```
+CREATE TABLE `activities` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tweet_id` bigint(20) DEFAULT NULL,
+  `posted_at` datetime DEFAULT NULL,
+  `body` text COLLATE utf8_unicode_ci,
+  `verb` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `repost_of_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `lang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `generator` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mentions` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `urls` text COLLATE utf8_unicode_ci,
+  `media` text COLLATE utf8_unicode_ci,
+  `place` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `country_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `long` float(11,6) DEFAULT NULL,
+  `lat` float(11,6) DEFAULT NULL,
+  `long_box` float(11,6) DEFAULT NULL,
+  `lat_box` float(11,6) DEFAULT NULL,
+  `followers_count` int(11) DEFAULT NULL,
+  `friends_count` int(11) DEFAULT NULL,
+  `statuses_count` int(11) DEFAULT NULL,
+  `klout_score` int(11) DEFAULT NULL,
+  `payload` text COLLATE utf8_unicode_ci,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `vit` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `tweet_id` (`tweet_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=573597 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
+Actor table:
+```
+CREATE TABLE `actors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `handle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `display_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `actor_link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `bio` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `time_zone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `utc_offset` int(11) DEFAULT NULL,
+  `posted_at` datetime DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `profile_geo_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `profile_geo_long` float DEFAULT NULL,
+  `profile_geo_lat` float DEFAULT NULL,
+  `profile_geo_country_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `profile_geo_region` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `profile_geo_subregion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `profile_geo_locality` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=113874 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
+Hashtag table:
+
+```
+CREATE TABLE `hashtags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tweet_id` bigint(20) DEFAULT NULL,
+  `hashtag` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `tweet_id` (`tweet_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=509453 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
+
+### External Data Schema
+
+Site metadata:
+
+```
+CREATE TABLE `sites` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `site_id` int(11) NOT NULL,
+  `lat` double NOT NULL,
+  `long` double NOT NULL,
+  `altitude` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
+Rain data values:
+
+```
+CREATE TABLE `rainvalues` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `posted_at` datetime NOT NULL,
+  `site_id` int(11) unsigned NOT NULL,
+  `sensor_id` int(11) unsigned DEFAULT NULL,
+  `incr_15` float DEFAULT NULL,
+  `accum` float DEFAULT NULL,
+  `accum_event` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=103681 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
+Stage values:
+
+```
+CREATE TABLE `stagevalues` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `posted_at` datetime DEFAULT NULL,
+  `site_id` int(11) unsigned NOT NULL,
+  `sensor_id` int(11) unsigned DEFAULT NULL,
+  `max_15` float DEFAULT NULL,
+  `avg_15` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51841 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
+
+
+
+
+
+
+
+
