@@ -10,7 +10,11 @@
   * 'interval-data': time-series keys with 'YYYY-MM-DD HH:MM' format, each having an 'interval' value.
     
 * 'interval' payload: 
-     
+ * 'tweets_geo_with_media'
+ * 'tweets_profile_with_media'
+ * 'tweets_geo_without_media'
+ * 'external_data'
+ * 'stats'     
   
 
   
@@ -34,7 +38,7 @@
 + New option to produce non-GeoJSON-based dataset (maperator does not currently need GeoJSON format).
 + New option to combine or separate 'tweets_geo' tweets. Current EventViewer focus is on "geo-tagged" Tweets with Media. Geo-tagged can mean either Tweet Geo or Profile Geo. 
   + If this option is set to 'true', all geo-tagged Tweets are written to a common interval key of 'tweets_geo' and every Tweet in that interval's array has a 'geo-type' attribute that indicates the type of source geo.   
-  + If 'false', there are separate interval keys: 'tweet_
+  + If 'false', there are separate interval keys: 'tweet_geo_with_media'
      
 + External data site names with spaces/punctuation are transformed to JSON friendly keys.
 
