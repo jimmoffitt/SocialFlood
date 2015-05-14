@@ -7,6 +7,9 @@
   * 'external_metadata': stores metadata of external dataset, such as site name and geo location. 
   * 'stats': Tweet stats, such as number in source data
   * 'interval-data': time-series keys with 'YYYY-MM-DD HH:MM' format, each having an 'interval' value.
+  * 
+  
+![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/EventBinner/docs/event_viewer_dataset_root_keys.png)
     
 * 'interval' payload: 
  * 'tweets_geo_with_media'
