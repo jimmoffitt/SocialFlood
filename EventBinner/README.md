@@ -9,7 +9,7 @@
   * 'interval-data': time-series keys with 'YYYY-MM-DD HH:MM' format, each having an 'interval' value.
   * 
   
-![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/EventBinner/docs/event_viewer_dataset_root_keys.png)
+![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_root_keys.png)
     
 * 'interval' payload: 
  * 'tweets_geo_with_media'
