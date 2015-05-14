@@ -20,7 +20,7 @@
  * ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_time_series.png)   
  
 * 'interval-data' payload:
- * ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_time_series.png)   
+ * ![](https://github.com/jimmoffitt/SocialFlood/blob/master/EventBinner/docs/event_viewer_dataset_interval_data.png)   
 
 
 * Geo Display 'layer' being prototyped at https://github.com/blehman/maperator (and forked here: )
