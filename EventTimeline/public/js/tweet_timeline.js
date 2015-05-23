@@ -8,15 +8,8 @@
 
 TO-DOs:
 -------
-
-[] Rendering three columns.
-[] Adding new Tweet at top of column.
-[] Removing Tweet from end of column. 
-
-          <div id="task_row_0" class="task_row_row"></div>
-
-          var div = document.getElementById("task_row_" + taskId);
-          div.parentNode.removeChild(div);
+[] Scanning array for matching string.
+[] Scripts for launching different socket demos: globe, flood replay, and real-time. Text-based, semi-unfiltered Replay?
 */
 
 
@@ -66,7 +59,7 @@ data_container.append('text')
 
 //Three columns with Tweets. Tweets will be in a 'div' array, and we'll keep a given amount of those (100?).
 //So, these counters are used to provide divs with unique IDs.
-var maxTweetsInColumn = 50;
+var maxTweetsInColumn = 40;
 var tweetCol1Count = 0, tweetCol2Count = 0, tweetCol3Count = 0, tweetCol4Count = 0;
 var tweetCol1Divs = 0, tweetCol2Divs = 0, tweetCol3Divs = 0, tweetCol4Divs = 0;
 
@@ -81,9 +74,6 @@ d3.select("#tweets_column3")
 
 d3.select("#tweets_column4")
   .classed("tweets_column4",true);
-
-
-
 
 //TODO: need to put sizing in a method and call that.
 // set hieights based on window size.
@@ -148,7 +138,6 @@ function handleTweet(tweet) {
       //console.log("Time to remove Tweets from Column 1.");
        d3.selectAll("#col1_" + (tweetCol1Divs-maxTweetsInColumn)).remove();
     }
-
   } 
 
   //Column 2 - Select hashtags.
