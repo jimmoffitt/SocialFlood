@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+
+    <style> 
+        @import url(http://cdn.leafletjs.com/leaflet-0.6.1/leaflet.css);
+    </style>
+    <script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
+    </script>
+</head>
+
+<body>
+    <div id = "map"></div>
+    <div>
+      <svg id = "timeseries"></svg>
+    </div>
+    <div id = "tweet_from_map"></div>
+    <div id = "tweets_vit"></div>
+      <img id = "photo">
+    <script src="js/eventViewer2.js" type="text/javascript"></script>
+
+</body>
+</html>
