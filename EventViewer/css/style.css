@@ -1,0 +1,72 @@
+@import url(http://cdn.leafletjs.com/leaflet-0.6.1/leaflet.css);
+  #overlay{
+   fill:None;
+   stroke:#ff00ff;
+   stroke-width:4px;
+  }
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#map {
+    border: 2px solid;
+    position: absolute;
+}
+
+#tweet_from_map {
+    position: absolute;
+}
+
+#tweets_vit {
+    position: relative;
+    margin-top: "-500px";
+    height: 200px;
+    overflow: auto;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
+}
+
+#controls {
+  font-size: 14px;
+  position: absolute;
+  top: 120px;
+  left: 810px;
+}
+
+input {
+  margin: 4px 4px 0;
+}
+
+#photo {
+  position:absolute;
+}
+
+.brushElement .extent {
+  stroke: #red;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+.resize rect {
+  stroke: #111;
+  fill: #111;
+  
+}
+
