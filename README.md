@@ -2,7 +2,7 @@ SocialFlood
 ===========
 A collection of things related to display and analysis around the 2013 Colorado Flood.
 
-I posted a series of blog posts that focued on two professional interests: early warning systems and Twitter Data Platform. The following posts discuss looking for a rainfall 'signal' in Twitter data and potential roles the Twitter network could play in early-warning systems:
+I posted a series of blog posts that focued on two professional interests: early warning systems and the Twitter Data Platform. The following posts start with a discussion of looking for a rainfall 'signal' in Twitter data, then discuss potential roles the Twitter network could play in early-warning systems, then wrap up with how the 2013 Colorado Flood unfolded on Twitter:
 
 - https://blog.gnip.com/tweeting-in-the-rain/
 - https://blog.gnip.com/tweeting-in-the-rain-part-2/
@@ -17,9 +17,7 @@ So far these tools have fallen out of this effort:
 + EventViewer: Web map-based event viewer. Source 'maperator' project lives here: https://github.com/blehman/maperator
 + EventPlots: prototype for building d3 time-series plots of event.
 
-![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventViewer/imgs/EventTools.png)
-
-
+![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/imgs/SocialFlood.png)
 
 
 #### Background
