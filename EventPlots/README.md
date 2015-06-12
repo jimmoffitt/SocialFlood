@@ -20,7 +20,7 @@ Number and data sources are pre-determined (hardcoded) when plots are generated.
   + Dynamic resizing
   + Re-synch with latest EventBinner output. (and make easier to do next time?)  
 
-### Version 1 output:
+### Version 2 output:
 
   ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventPlots/output/eventPlots.png)
 
