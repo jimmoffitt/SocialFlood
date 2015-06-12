@@ -22,7 +22,7 @@ Number and data sources are pre-determined (hardcoded) when plots are generated.
 
 ### Version 1 output:
 
-  ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventPlots/output/eventPlots_v1.png)
+  ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventPlots/output/eventPlots.png)
 
 
 ## Process:
