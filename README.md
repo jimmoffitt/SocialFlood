@@ -2,7 +2,7 @@ SocialFlood
 ===========
 A collection of things related to display and analysis around the 2013 Colorado Flood.
 
-I posted a series of blog posts that focued on two professional interests: early warning systems and Twitter data. The following posts discuss looking for a rainfall 'signal' in Twitter data and potential roles the Twitter network could play in early-warning systems:
+I posted a series of blog posts that focued on two professional interests: early warning systems and Twitter Data Platform. The following posts discuss looking for a rainfall 'signal' in Twitter data and potential roles the Twitter network could play in early-warning systems:
 
 - https://blog.gnip.com/tweeting-in-the-rain/
 - https://blog.gnip.com/tweeting-in-the-rain-part-2/
