@@ -17,9 +17,7 @@ So far these tools have fallen out of this effort:
 + EventViewer: Web map-based event viewer. Source 'maperator' project lives here: https://github.com/blehman/maperator
 + EventPlots: prototype for building d3 time-series plots of event.
 
-![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventViewer/imgs/EventTools.png)
-
-
+![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/imgs/SocialFlood.png)
 
 
 #### Background
