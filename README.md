@@ -19,7 +19,7 @@ So far these tools have fallen out of this effort:
 
 ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/imgs/SocialFlood.png)
 
- ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventPlots/output/eventPlots.png)
+ ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventDeck/imgs/flood_event_deck.png)
 
 
 
