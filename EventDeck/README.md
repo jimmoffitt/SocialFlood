@@ -2,6 +2,15 @@
 ## EventDeck
 #### Otherwise known as the "poorman's TweetDeck."
 
+EventDeck is a demo put together to illustrate how the 2013 Colorado Flood unfolded on Twitter.
+
+EventDeck receives a Tweet stream and displays them ala TweetDeck with Tweets organized in pre-defined columns.
+
+
+
+
+
+
 Dependencies:
 
 * bullet.js
@@ -12,6 +21,7 @@ Dependencies:
 socket.on('tweet', handleTweet); //Tweet arrived, go handle it!
 ```
 
+```
 if (tags.indexOf("agency") >= 0 ) {
    //column 1
 }
@@ -24,10 +34,11 @@ else if (tags.indexOf("flood_tag") >= 0 ) {
 else {
 	//column 4
 }
-
+```
 
 ### Event Rules and Tags
 
+```
 {
   "rules": [
     {
@@ -82,10 +93,12 @@ else {
       "value": "-is:retweet (rain OR rained OR raining OR rainfall OR contains:flood OR contains:precip OR storm OR stormed OR storming OR weather OR pour OR oured OR pouring OR dumping OR \"water deep\"~6 OR disaster) (bounding_box:[-109.00000 37.00000 -108.65000 37.30000] OR bounding_box:[-108.65000 37.00000 -108.30000 37.30000] OR bounding_box:[-108.30000 37.00000 -107.95000 37.30000] OR bounding_box:[-107.95000 37.00000 -107.60000 37.30000] OR bounding_box:[-107.60000 37.00000 -107.25000 37.30000] OR bounding_box:[-107.25000 37.00000 -106.90000 37.30000] OR bounding_box:[-106.90000 37.00000 -106.55000 37.30000] OR bounding_box:[-106.55000 37.00000 -106.20000 37.30000] OR bounding_box:[-106.20000 37.00000 -105.85000 37.30000] OR bounding_box:[-105.85000 37.00000 -105.50000 37.30000] OR bounding_box:[-105.50000 37.00000 -105.15000 37.30000] OR bounding_box:[-105.15000 37.00000 -104.80000 37.30000] OR bounding_box:[-104.80000 37.00000 -104.45000 37.30000])",
       "tag": "hydrology_geo_tagged"
     }
-
+```
 
 
 ####Entire JSON ruleset.
+
+```
 {
   "rules": [
     {
@@ -210,3 +223,4 @@ else {
     }
   ]
 }
+```
