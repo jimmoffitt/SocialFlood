@@ -29,7 +29,7 @@ So far these tools have fallen out of this effort:
 
 #### Background
 
-I have a big interest in flood warning systems and experience developing meteorology/hydrology-monitoring software. [This](https://www.onerain.com/solutions/diadvisor) was something I focused on for over ten years... I helped build data services that drive [this family of web-based early-warning systems](https://www.onerain.com/contrail-hydrologic-software). Those services focuses on a API for data and metadata exchange, based on a family of Java Servlets. Also developed back-end Java apps that provided alarm and notification services.
+I have a big interest in flood warning systems and experience developing meteorology/hydrology-monitoring software. [This](https://www.onerain.com/solutions/diadvisor) was something I focused on for over ten years... I helped build data services that drive [this family of web-based early-warning systems](https://www.onerain.com/contrail-hydrologic-software). Those services focus on a API for data and metadata exchange, based on a family of Java Servlets. Also developed back-end Java apps that provide alarm and notification services.
 
 
 
