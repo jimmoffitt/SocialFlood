@@ -7,6 +7,7 @@ EventDeck is a demo put together to illustrate how the 2013 Colorado Flood unfol
 EventDeck receives a Tweet stream and displays them ala TweetDeck with Tweets organized in pre-defined columns.
 
 
+ ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventDeck/imgs/flood_event_deck.png)
 
 
 
