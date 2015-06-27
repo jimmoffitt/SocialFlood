@@ -1,0 +1,11 @@
+
+.flexbox-container {
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flexbox-container > div {
+	width: 25%;
+	padding: 10px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>FloodTweets</title>
+        <meta name="description" content="socket a flood">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Play:700,400' type='text/css'>
+               
+        <style>
+            body {
+                font: 18px arial;
+                background-color: #90CAF9;
+            }
+        </style>
+
+        <script>window.twttr = (function(d, s, id) {
+      		var js, fjs = d.getElementsByTagName(s)[0],
+        	t = window.twttr || {};
+      		if (d.getElementById(id)) return;
+      		js = d.createElement(s);
+      		js.id = id;
+      		js.src = "https://platform.twitter.com/widgets.js";
+      		fjs.parentNode.insertBefore(js, fjs);
+
+      		t._e = [];
+      		t.ready = function(f) {
+        		t._e.push(f);
+      		};
+
+      		return t;
+    	}(document, "script", "twitter-wjs"));
+    	</script>
+
+       <!--  <link rel="stylesheet" href="css/core.css"> -->
+
+  </head>
+  <body>
+
+    <h1>2013 Colorado Flood</h1> 
+    <div id="summary">
+    </div>
+
+
+  	<!--[if lt IE 8]>
+  		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  	<![endif]-->
+      
+    <!-- socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+      
+  	<!-- APP CODE -->
+  	<script src="../js/event_tweet_deck.js"></script>
+    <script src="../js/bullet.js"></script>
+    
+    <div id="columns" class="flexbox-container">
+      <div id="tweets_column1">
+        <h3>Agency and Media Tweets</h3> 
+      </div>  
+      <div id="tweets_column2">
+         <h3>Other Tweets with photos/videos</h3> 
+      </div>  
+      <div id="tweets_column3">
+         <h3>Tweets with #flood</h3>
+      </div> 
+      <div id="tweets_column4">
+         <h3>Other Tweets</h3>
+      </div>   
+    </div>
+
+  </body>
+</html>
