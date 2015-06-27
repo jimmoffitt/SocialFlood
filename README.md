@@ -13,10 +13,10 @@ The research behind these blog posts included a variety of software tools that h
 
 So far these tools have fallen out of this effort:
 
-+ EventBinner: Ruby code that pulls data from MySQL and outputs event (Geo)JSON data.  Combines Twitter and 'external' data into an integrated source file for project viewers. 
-+ EventViewer: Web map-based event viewer. Source 'maperator' project lives here: https://github.com/blehman/maperator
-+ EventPlots: prototype for building d3 time-series plots of event.
-+ EventDeck: 
++ [EventBinner](https://github.com/jimmoffitt/SocialFlood/tree/master/EventBinner): Ruby code that pulls data from MySQL and outputs event (Geo)JSON data.  Combines Twitter and 'external' data into an integrated source file for project viewers. 
++ [EventViewer](https://github.com/jimmoffitt/SocialFlood/tree/master/EventViewer): Web map-based event viewer. Source 'maperator' project lives here: https://github.com/blehman/maperator
++ [EventPlots](https://github.com/jimmoffitt/SocialFlood/tree/master/EventPlots): prototype for building d3 time-series plots of event.
++ [EventDeck](https://github.com/jimmoffitt/SocialFlood/tree/master/EventDeck): Receives streamed data and displays Tweets in pre-defined columns, ala TweetDeck.
 
 ### EventViewer with EventPlots
 ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/imgs/SocialFlood.png)
