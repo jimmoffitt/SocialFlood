@@ -4,6 +4,8 @@ A collection of things related to display and analysis around the 2013 Colorado 
 
 I posted a series of blog posts that focued on two professional interests: early warning systems and the Twitter Data Platform. The following posts start with a discussion of looking for a rainfall 'signal' in Twitter data, then discuss potential roles the Twitter network could play in early-warning systems, then wrap up with how the 2013 Colorado Flood unfolded on Twitter:
 
+* NOTE * these blog.gnip.com posts are not currently available (I am working on getting them ported elsewhere).
+
 - https://blog.gnip.com/tweeting-in-the-rain/
 - https://blog.gnip.com/tweeting-in-the-rain-part-2/
 - https://blog.gnip.com/tweeting-in-the-rain-part-3/
