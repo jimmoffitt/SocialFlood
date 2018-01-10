@@ -2,7 +2,6 @@ class TweetSql
 
   def get_tweets_count(params)
 
-    #Create geo-tagged tweets.
     sSQL = "SELECT COUNT(*)
           FROM activities
           WHERE `posted_at` > '#{params[:start_date]}'
@@ -33,7 +32,6 @@ class TweetSql
   end
 
   def get_non_geo_vit_tweets(params)
-    #Get non-geo-tagged VIT tweetss.
     sSQL = "SELECT `posted_at`, `link`, `urls`
           FROM activities
           WHERE `long` IS NULL
@@ -46,8 +44,6 @@ class TweetSql
   
   #-----------------------------------------------------------------------------------------
   def get_geo_tagged_tweets(params)
-  
-    #Get all geo-tagged tweets.
     sSQL = "SELECT `posted_at`, `link`, `lat`, `long`, `lat_box`, `long_box`, `urls`
           FROM activities
           WHERE `long` IS NOT NULL
@@ -57,8 +53,6 @@ class TweetSql
   end
 
   def get_count_geo_tagged_tweets(params)
-
-    #Get all geo-tagged tweets.
     sSQL = "SELECT COUNT(*)
           FROM activities
           WHERE `long` IS NOT NULL
@@ -70,8 +64,6 @@ class TweetSql
 
   #-----------------------------------------------------------------------------------------
   def get_geo_tagged_tweets_with_media(params)
-
-    #Create geo-tagged tweets.
     sSQL = "SELECT `posted_at`, `link`, `lat`, `long`, `lat_box`, `long_box`, `urls`
           FROM activities
           WHERE `long` IS NOT NULL
@@ -82,8 +74,6 @@ class TweetSql
   end
 
   def get_count_geo_tagged_tweets_with_media(params)
-
-    #Create geo-tagged tweets.
     sSQL = "SELECT COUNT(*)
           FROM activities
           WHERE `long` IS NOT NULL
@@ -95,8 +85,6 @@ class TweetSql
 
   #-----------------------------------------------------------------------------------------
   def get_geo_tagged_tweets_without_media(params)
-
-    #Create geo-tagged tweets.
     sSQL = "SELECT `posted_at`, `link`, `lat`, `long`, `lat_box`, `long_box`, `urls`
           FROM activities
           WHERE `long` IS NOT NULL
@@ -107,8 +95,6 @@ class TweetSql
   end
 
   def get_count_geo_tagged_tweets_without_media(params)
-
-    #Create geo-tagged tweets.
     sSQL = "SELECT COUNT(*)
           FROM activities
           WHERE `long` IS NOT NULL
@@ -121,7 +107,6 @@ class TweetSql
   #-----------------------------------------------------------------------------------------
 
   def get_tweets_with_profile_geo_only_by_region(params)
-    #Create geo-tagged tweets.
     sSQL = "SELECT a.`posted_at`, a.`tweet_id`, a.`link`, a.`user_id`, a.`body`, users.profile_geo_lat AS `lat`, users.profile_geo_long AS `long`, a.`media`, a.`urls`
           FROM activities a, actors users
           WHERE a.user_id = users.user_id
@@ -130,12 +115,9 @@ class TweetSql
             AND a.`posted_at` > '#{params[:start_date]}'
             AND a.`posted_at` <= '#{params[:end_date]}'
           ORDER BY `posted_at` ASC;"
-    
   end
 
-
   def get_tweets_with_profile_geo_only_by_bounding_box(params)
-    #Create geo-tagged tweets.
     sSQL = "SELECT a.`posted_at`, a.`tweet_id`, a.`link`, users.profile_geo_lat AS `lat`, users.profile_geo_long AS `long`, a.`urls`
           FROM activities a, actors users
           WHERE a.user_id = users.user_id
@@ -151,7 +133,6 @@ class TweetSql
   end
 
   def get_tweets_with_media_profile_geo_only_by_bounding_box(params)
-    #Create geo-tagged tweets.
     sSQL = "SELECT a.`posted_at`, a.`tweet_id`, a.`link`, users.profile_geo_lat AS `lat`, users.profile_geo_long AS `long`, a.`urls`
           FROM activities a, actors users
           WHERE a.user_id = users.user_id
@@ -168,9 +149,6 @@ class TweetSql
   end
 
   def get_instagram_tweets_with_profile_geo_only(params)
-    #WHERE (`media` IS NOT NULL OR `urls` LIKE '%instagram%')
-    #Create geo-tagged tweets with media time-series.
-    sSQL = "SELECT a.`posted_at`, a.`tweet_id`, a.`link`, a.`user_id`, a.`body`, users.profile_geo_lat AS `lat`, users.profile_geo_long AS `long`, a.`media`, a.`urls`
           FROM activities a, actors users
           WHERE (a`urls` LIKE '%instagram%')
             AND a.user_id = users.user_id
@@ -182,8 +160,6 @@ class TweetSql
   end
 
   def get_geo_tagged_instagram_tweets(params)
-    #WHERE (`media` IS NOT NULL OR `urls` LIKE '%instagram%')
-    #Create geo-tagged tweets with media time-series.
     sSQL = "SELECT `posted_at`, `tweet_id`, `link`, `user_id`, `body`, `lat`, `long`, `lat_box`, `long_box`, `media`, `urls`
         FROM activities
             WHERE (`urls` LIKE '%instagram%')
