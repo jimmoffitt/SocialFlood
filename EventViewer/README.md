@@ -19,5 +19,7 @@ Browser-based explorer of Twitter events.
  + Move "brush" to end of event to see Tweet "heat map" of entire event.
 + Far right Tweet timeline shows first 10 "very important Tweets" (VITs) for selected time period.
  + VITs are curated in database, then exported by [EventBinner](https://github.com/jimmoffitt/SocialFlood/tree/master/EventBinner). 
+ 
+ Run locally: python -m http.server
 
 ![](https://raw.githubusercontent.com/jimmoffitt/SocialFlood/master/EventViewer/imgs/eventViewer_v2.png)
