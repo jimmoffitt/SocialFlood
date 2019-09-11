@@ -100,6 +100,46 @@ For Texas, this includes real-time rain and river level data.
  }
  ```
  
+ 
+ 
+ # JSON array of rules.
+
+Putting it all together. 
+
+The following ruleset was used for the initial prep-for-hackweek data pull. 
+
+```json
+{
+	"rules": [{
+			"value": "-is:retweet (from:HoustonOEM OR from:ReadyHarris OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
+			"tag": "partners, operations, public safety, public communication, originial posts"
+		},
+		{
+			"value": "-is:retweet (@NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR @USGS_TexasRain OR @USGS_TexasRain OR from:JeffLindner1)",
+			"tag": "meteorologic, originial posts"
+		},
+		{
+			"value": "-is:retweet (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
+			"tag": "verified, originial posts"
+		},
+		{
+			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
+			"tag": "geo, media"
+		}, {
+			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
+			"tag": "profile-geo, media"
+		},
+		{
+			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
+			"tag": "harvey-mention, linked media, Texas profile, geo-tagged"
+
+		}
+	]
+}
+```
+ 
+ 
+ 
  ## Other rules (currently not used)
  
  These seem a bit too general....
@@ -122,7 +162,15 @@ For Texas, this includes real-time rain and river level data.
 
 ## Geo bounding boxes
 
+These are not used yet. Generated with https://github.com/jimmoffitt/bounding-boxes.
+
+/bounding-boxes/rbBoundingBoxes -w -99 -e -89.5 -n 32 -s 24.25 -d  -b 180
+
+Expecting 728 boxes (26 rows X 28 columns).
+
 ### Large box with 43 rules
+
+These rules are a set of 
 
 ```csv
 {rule clauses} (bounding_box:[-99.00000 24.25000 -98.65000 24.55000] OR bounding_box:[-98.65000 24.25000 -98.30000 24.55000] OR bounding_box:[-98.30000 24.25000 -97.95000 24.55000] OR bounding_box:[-97.95000 24.25000 -97.60000 24.55000] OR bounding_box:[-97.60000 24.25000 -97.25000 24.55000] OR bounding_box:[-97.25000 24.25000 -96.90000 24.55000] OR bounding_box:[-96.90000 24.25000 -96.55000 24.55000] OR bounding_box:[-96.55000 24.25000 -96.20000 24.55000] OR bounding_box:[-96.20000 24.25000 -95.85000 24.55000] OR bounding_box:[-95.85000 24.25000 -95.50000 24.55000] OR bounding_box:[-95.50000 24.25000 -95.15000 24.55000] OR bounding_box:[-95.15000 24.25000 -94.80000 24.55000] OR bounding_box:[-94.80000 24.25000 -94.45000 24.55000] OR bounding_box:[-94.45000 24.25000 -94.10000 24.55000] OR bounding_box:[-94.10000 24.25000 -93.75000 24.55000])
@@ -172,38 +220,4 @@ For Texas, this includes real-time rain and river level data.
 
 
 
-# JSON array of rules.
 
-Putting it all together. 
-
-The following ruleset was used for the initial prep-for-hackweek data pull. 
-
-```json
-{
-	"rules": [{
-			"value": "-is:retweet (from:HoustonOEM OR from:ReadyHarris OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
-			"tag": "partners, operations, public safety, public communication, originial posts"
-		},
-		{
-			"value": "-is:retweet (@NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR @USGS_TexasRain OR @USGS_TexasRain OR from:JeffLindner1)",
-			"tag": "meteorologic, originial posts"
-		},
-		{
-			"value": "-is:retweet (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
-			"tag": "verified, originial posts"
-		},
-		{
-			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
-			"tag": "geo, media"
-		}, {
-			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
-			"tag": "profile-geo, media"
-		},
-		{
-			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
-			"tag": "harvey-mention, linked media, Texas profile, geo-tagged"
-
-		}
-	]
-}
-```
