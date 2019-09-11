@@ -1,7 +1,7 @@
 
-```json 
+The following filters were used to compile (and later curate) Tweets for the 'eventViewer' pilot.
 
-
+```json
 {
     "rules" :
         [
@@ -51,5 +51,6 @@
             }
     ]
 }
+
 
 ```
