@@ -1,16 +1,30 @@
+# Generating a collection of Hurricane Harvey Tweets 
 
-## Fundamentals:
-* -is.retweet | In most cases we are interested only in original Tweets. We can rehydrate Tweet is sharing metadata is needed.
-* Verified accounts | A set of 'official' accounts that we want all Tweets from. 
-* has:media | Native media
+Building filters/rules/queries for generating a collection of Tweets that help tell the story of how Hurricane Harvey unfolded on Twitter.  
+
+These rules are used with Twitter APIs to match and collect Tweets. These Tweets are currently loaded into a relational database. Reviewing database contents provides a second pass at Tweet collection curation (e.g. deleting Tweets that do not help tell the story). From the database, Tweet IDs (along with some supporting metadata such as available geographic coordinates) are then written to a JSON-based data resource used by the data visualization tool.
+
+Building a rule set to match on Harvey Tweets is an iterative process. The rules below represent a first version and these will evolve as the collection is curated.
+
+## Rule fundamentals
+
+The "match Tweet" operators below are fundamental for surfacing Tweets of interest. 
+* Keywords | A set of words and phrases that characterize the Tweet as one of interest.
+* #hashtags | A set of hashtags related to the event of interest. 
+* -is:retweet | In most cases we are interested only in original Tweets. We can rehydrate Tweet is sharing metadata is needed.
+* is:verified | A set of 'official' accounts that we want all Tweets from. 
+* has:media | Native media (photos and videos).
 * Media hosted elsewhere | Photos and videos hosted elsewhere like Google Photos and Instagram. 
 * has:geo | Geo-tagged Tweet. 
 * has:profile_geo | Tweet from an account with a 'home' location that can be geo-referenced to at least country level.
-  * profile_region:texas | Tweet from an account with a 'home' location of Texas, USA.   
+  * profile_region:texas | Tweet from an account with a 'home' location of Texas, USA. 
+  
+  
   
 # Verified accounts of interest
 
 ## Weather
++ @NWSNHC
 + @NWSHouston
 + @NWSSanAntonio
 + @JeffLindner1 
@@ -23,7 +37,8 @@
 + @HCSOTexas
 + @HoustonTX
 + @BrazoriaCounty 
-+ (Other public safety sector)
++ (Others from the public safety sector)
++ Other Texas counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Chambers, Liberty, Montgomery, Colorado, Waller, Grimes, Washington, Cameron, Willacy, Kennedy
 
 ## Other data
 + @USGS_TexasRain, rainfall
@@ -46,7 +61,7 @@
 
 ## Partners and cooperators
 
-Counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Chambers, Liberty, Montgomery, Colorado, Waller, Grimes, Washington, Cameron, Willacy, kenedy
+Counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Chambers, Liberty, Montgomery, Colorado, Waller, Grimes, Washington, Cameron, Willacy, Kennedy
 
 ```json
  {"value" : "-is:retweet (from:HoustonOEM OR from:ReadyHarris OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
@@ -59,7 +74,7 @@ Counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Cha
 For Texas, this includes real-time rain and river level data.
 
 ```json
- {"value" : "-is:retweet (@NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR @USGS_TexasRain OR @USGS_TexasRain OR from:JeffLindner1)",
+ {"value" : "-is:retweet (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasRain OR from:JeffLindner1)",
   "tag" : "meteorologic, originial posts"
  }
 ```
@@ -115,7 +130,7 @@ The following ruleset was used for the initial prep-for-hackweek data pull.
 			"tag": "partners, operations, public safety, public communication, originial posts"
 		},
 		{
-			"value": "-is:retweet (@NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR @USGS_TexasRain OR @USGS_TexasRain OR from:JeffLindner1)",
+			"value": "-is:retweet (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasRain OR from:JeffLindner1)",
 			"tag": "meteorologic, originial posts"
 		},
 		{
