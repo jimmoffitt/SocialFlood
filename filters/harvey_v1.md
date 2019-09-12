@@ -6,7 +6,7 @@ These rules are used with Twitter APIs to match and collect Tweets. These Tweets
 
 Building a rule set to match on Harvey Tweets is an iterative process. The rules below represent a first version and these will evolve as the collection is curated.
 
-## Rule fundamentals
+### Rule fundamentals
 
 The "match Tweet" operators below are fundamental for surfacing Tweets of interest. 
 * Keywords | A set of words and phrases that characterize the Tweet as one of interest.
@@ -19,18 +19,25 @@ The "match Tweet" operators below are fundamental for surfacing Tweets of intere
 * has:profile_geo | Tweet from an account with a 'home' location that can be geo-referenced to at least country level.
   * profile_region:texas | Tweet from an account with a 'home' location of Texas, USA. 
   
+Geo-tagged Tweets with photos and videos are the 'special sauce' for event visualization. These Tweets illustrate the powerful and actionable content that Twitter provides during these types of events.
   
   
-# Verified accounts of interest
+### Identifying Tweets identified by user as about Hurricane Harvey
 
-## Weather
+The following set of keywords and hashtags are the initial set used to surface Tweets of interest. 
+
+(harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)
+  
+## Verified accounts of interest
+
+### Weather
 + @NWSNHC
 + @NWSHouston
 + @NWSSanAntonio
 + @JeffLindner1 
 + (Add hurricane forecasts)
 
-## Operations, public comms
+### Operations, public comms
 + @HoustonOEM
 + @ReadyHarris 
 + @HoustonFire 
@@ -45,7 +52,7 @@ The "match Tweet" operators below are fundamental for surfacing Tweets of intere
 + @USGS_TexasFlood, stage
 + (Other forecast and modeling sources?)
 
-## Media
+### Media
 + @HoustonChron
 + @DallesNews
 + @HoustonPress 
@@ -57,9 +64,9 @@ The "match Tweet" operators below are fundamental for surfacing Tweets of intere
 + @KHOU
 + (Others)
 
-# Example rules: 
+## Example rules: 
 
-## Partners and cooperators
+### Partners and cooperators
 
 Counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Chambers, Liberty, Montgomery, Colorado, Waller, Grimes, Washington, Cameron, Willacy, Kennedy
 
@@ -69,7 +76,7 @@ Counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Cha
  }
 ```
 
-## Weather and meteorology 
+### Weather and meteorology 
 
 For Texas, this includes real-time rain and river level data.
 
@@ -79,7 +86,7 @@ For Texas, this includes real-time rain and river level data.
  }
 ```
 
-## Media
+### Media
 
 ```json
  {"value" : "-is:retweet (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
@@ -87,11 +94,7 @@ For Texas, this includes real-time rain and river level data.
  }
 ``` 
 
-## Identifying Tweets identified by user as about Hurricane Harvey
-
-(harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)
-
-## Geo-tagged 'harvey' Tweets with media
+### Geo-tagged 'harvey' Tweets with media
 
 ```json
  {"value" : "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
@@ -99,7 +102,7 @@ For Texas, this includes real-time rain and river level data.
  } 
 ```
 
-## Profile-geo-tagged 'harvey' Tweets with media
+### Profile-geo-tagged 'harvey' Tweets with media
 
 ```json
  {"value" : "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
@@ -107,7 +110,7 @@ For Texas, this includes real-time rain and river level data.
  }
 ```
 
-## Media hosted elsewhere, geo tagged
+### Media hosted elsewhere, geo tagged
 
 ```json
 {"value" : "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
@@ -117,7 +120,7 @@ For Texas, this includes real-time rain and river level data.
  
  
  
- # JSON array of rules.
+## JSON array of rules.
 
 Putting it all together. 
 
