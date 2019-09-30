@@ -129,6 +129,45 @@ Putting it all together.
 The following ruleset was generated during hackweek.
 
 ```json
+{
+	"rules": [{
+			"value": "-is:retweet (from:HoustonOEM OR from:ReadyHarris OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR from:FEMARegion6 OR from:HarveyRescue OR from:HarveySOS)",
+			"tag": "partners, operations, public safety, public communication, originial posts"
+		},
+		{
+			"value": "-is:retweet (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasRain OR from:JeffLindner1)",
+			"tag": "meteorologic, original posts"
+		},
+		{
+			"value": "-is:retweet (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
+			"tag": "verified, original posts"
+		},
+		{
+			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"tag": "geo, media"
+		}, {
+			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"tag": "profile-geo, media"
+		},
+		{
+			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"tag": "harvey-mention, linked media, Texas profile, geo-tagged"
+
+		},
+		{
+               "value" : "has:media -is:retweet profile_region:Texas (flood OR rain OR storm OR emergency)",
+               "tag" : "flood terms"
+           },
+           {
+               "value" : "-is:retweet profile_region:Texas (911 OR rescue OR ((need OR send) help) OR ((house OR street OR neighborhood) ((under water) OR flooded)) OR (this address) OR (on roof))",
+               "tag" : "rescue, flood help"
+           }
+	]
+}
+
+
+
+
 
 
 
