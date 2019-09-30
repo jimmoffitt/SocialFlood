@@ -124,6 +124,17 @@ For Texas, this includes real-time rain and river level data.
 
 Putting it all together. 
 
+
+
+The following ruleset was generated during hackweek.
+
+```json
+
+
+
+```
+
+
 The following ruleset was used for the initial prep-for-hackweek data pull. 
 
 ```json
