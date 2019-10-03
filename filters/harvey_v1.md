@@ -26,7 +26,7 @@ Geo-tagged Tweets with photos and videos are the 'special sauce' for event visua
 
 The following set of keywords and hashtags are the initial set used to surface Tweets of interest. 
 
-(harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR )
+(harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)
   
 ## Verified accounts of interest
 
@@ -97,7 +97,7 @@ For Texas, this includes real-time rain and river level data.
 ### Geo-tagged 'harvey' Tweets with media
 
 ```json
- {"value" : "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+ {"value" : "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
   "tag" : "geo, media" 
  } 
 ```
@@ -105,7 +105,7 @@ For Texas, this includes real-time rain and river level data.
 ### Profile-geo-tagged 'harvey' Tweets with media
 
 ```json
- {"value" : "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+ {"value" : "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
   "tag" : "profile-geo, media"
  }
 ```
@@ -113,7 +113,7 @@ For Texas, this includes real-time rain and river level data.
 ### Media hosted elsewhere, geo tagged
 
 ```json
-{"value" : "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+{"value" : "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
                 "tag" : "harvey-mention, linked media, Texas profile, geo-tagged"
  }
  ```
@@ -143,14 +143,14 @@ The following ruleset was generated during hackweek.
 			"tag": "verified, original posts"
 		},
 		{
-			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
 			"tag": "geo, media"
 		}, {
-			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
 			"tag": "profile-geo, media"
 		},
 		{
-			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
 			"tag": "harvey-mention, linked media, Texas profile, geo-tagged"
 
 		},
