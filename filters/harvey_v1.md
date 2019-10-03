@@ -26,7 +26,7 @@ Geo-tagged Tweets with photos and videos are the 'special sauce' for event visua
 
 The following set of keywords and hashtags are the initial set used to surface Tweets of interest. 
 
-(harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)
+(harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR )
   
 ## Verified accounts of interest
 
@@ -143,14 +143,14 @@ The following ruleset was generated during hackweek.
 			"tag": "verified, original posts"
 		},
 		{
-			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
 			"tag": "geo, media"
 		}, {
-			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
 			"tag": "profile-geo, media"
 		},
 		{
-			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
+			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue)",
 			"tag": "harvey-mention, linked media, Texas profile, geo-tagged"
 
 		},
@@ -159,7 +159,7 @@ The following ruleset was generated during hackweek.
                "tag" : "flood terms"
            },
            {
-               "value" : "-is:retweet profile_region:Texas (911 OR rescue OR ((need OR send) help) OR ((house OR street OR neighborhood) ((under water) OR flooded)) OR (this address) OR (on roof))",
+               "value" : "-is:retweet profile_region:Texas (911 OR rescue OR ((need OR send) help) OR ((house OR street OR neighborhood) ((under water) OR flooded)) OR (address) OR (on roof))",
                "tag" : "rescue, flood help"
            }
 	]
