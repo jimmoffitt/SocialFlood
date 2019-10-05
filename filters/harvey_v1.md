@@ -9,15 +9,15 @@ Building a rule set to match on Harvey Tweets is an iterative process. The rules
 ### Rule fundamentals
 
 The "match Tweet" operators below are fundamental for surfacing Tweets of interest. 
-* Keywords | A set of words and phrases that characterize the Tweet as one of interest.
-* #hashtags | A set of hashtags related to the event of interest. 
-* -is:retweet | In most cases we are interested only in original Tweets. We can rehydrate Tweet is sharing metadata is needed.
-* is:verified | A set of 'official' accounts that we want all Tweets from. 
-* has:media | Native media (photos and videos).
-* Media hosted elsewhere | Photos and videos hosted elsewhere like Google Photos and Instagram. 
-* has:geo | Geo-tagged Tweet. 
-* has:profile_geo | Tweet from an account with a 'home' location that can be geo-referenced to at least country level.
-  * profile_region:texas | Tweet from an account with a 'home' location of Texas, USA. 
+* **Keywords** | A set of words and phrases that characterize the Tweet as one of interest.
+* **#hashtags** | A set of hashtags related to the event of interest. 
+* **-is:retweet** | In most cases we are interested only in original Tweets. We can rehydrate Tweet is sharing metadata is needed.
+* **is:verified** | A set of 'official' accounts that we want all Tweets from. 
+* **has:media** | Native media (photos and videos).
+* Media hosted elsewhere | Photos and videos hosted elsewhere like Google Photos and Instagram. **url:instagram OR url:\"photos.google\"**
+* **has:geo** | Geo-tagged Tweet. 
+* **has:profile_geo** | Tweet from an account with a 'home' location that can be geo-referenced to at least country level.
+  * **profile_region:texas** | Tweet from an account with a 'home' location of Texas, USA. 
   
 Geo-tagged Tweets with photos and videos are the 'special sauce' for event visualization. These Tweets illustrate the powerful and actionable content that Twitter provides during these types of events.
   
