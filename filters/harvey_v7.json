@@ -1,0 +1,40 @@
+{
+	"rules": [{
+			"value": "-is:retweet (from:HoustonOEM OR from:ReadyHarris OR from:ReadyHouston OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
+			"tag": "theme:info Original Tweets from official agencies"
+		},
+		{
+			"value": "-is:retweet (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasFlood OR from:JeffLindner1)",
+			"tag": "theme:info | Original Tweets from weather agencies and gauges"
+		},
+		{
+			"value": "-is:retweet (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
+			"tag": "Original Tweets from local media"
+		},
+		{
+			"value": "-is:retweet is:verified (profile_region:tx OR profile_region:texas) (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
+			"tag": "Verified accounts posting original Tweets with event hashtags"
+		},
+		{
+			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
+			"tag": "Original geo-tagged Tweets with media and event hashtags"
+		},
+		{
+			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
+			"tag": "Original Tweets with media and event hashtags from Texas accounts"
+
+		},
+		{
+			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
+			"tag": "Original geo-tagged Tweets with linked media and event hashtags from Texas accounts"
+		},
+		{
+			"value": "has:media -is:retweet profile_region:Texas (flood OR rain OR storm OR emergency)",
+			"tag": "Original Tweets with media and weather keywords from Texas accounts"
+		},
+		{
+			"value": "-is:retweet profile_region:Texas (911 OR rescue OR cajunnavy OR ((need OR send) help) OR ((house OR street OR neighborhood) ((under water) OR flooded)) OR (address) OR (on roof))",
+			"tag": "Theme sos | Original Tweets about rescues from Texas accounts"
+		}
+	]
+}
