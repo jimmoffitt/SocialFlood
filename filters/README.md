@@ -122,51 +122,56 @@ For Texas, this includes real-time rain and river level data.
  
 ## JSON array of rules.
 
-Putting it all together. 
+Putting it all together. In the case of the 'event explorer' prototype, different *themes* can be displayed. These themes are a set of Tweet collections that describe different types of conversations that happened during Hurricane Harvey.
 
-Current version (v3) is below. 
+After many iterations, this set of themes were landed on:
+1) Info
+2) Damage
+3) SOS
+4) Pets
+5) Recovery
 
 
 ```json
-{
-	"rules": [{
-			"value": "-is:retweet (from:HoustonOEM OR from:ReadyHarris OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
-			"tag": "partners, operations, public safety, public communication, not retweet"
+#INFO THEME	
+	    
+	    {
+			"value": "-is:retweet has:geo (from:HoustonOEM OR from:ReadyHarris OR from:ReadyHouston OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
+			"tag": "theme:info mapped original Tweets from official agencies"
 		},
 		{
-			"value": "-is:retweet (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasRain OR from:JeffLindner1)",
-			"tag": "weather, not retweet"
+			"value": "-is:retweet has:geo (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasFlood OR from:JeffLindner1)",
+			"tag": "theme:info mapped original from weather agencies and gauges"
 		},
 		{
-			"value": "-is:retweet (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
-			"tag": "verified, not retweet"
+			"value": "-is:retweet has:geo (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
+			"tag": "theme:info mapped original from local media"
 		},
-		{
-			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
-			"tag": "media with Tweet geo and Harvey mention, not retweet"
-		},
-		{
-			"value": "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
-			"tag": "media with Texas Profile geo and Harvey mention, not retweet"
 
+#We also want these info Tweets in the dataset since they may be key for the storyline. 
+
+ 
+	    {
+			"value": "-is:retweet -has:geo (from:HoustonOEM OR from:ReadyHarris OR from:ReadyHouston OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
+			"tag": "theme:info unmapped original Tweets from official agencies"
 		},
 		{
-			"value": "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood)",
-			"tag": "linked media with Texas Profile AND Tweet geo, not retweet"
+			"value": "-is:retweet -has:geo (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasFlood OR from:JeffLindner1)",
+			"tag": "theme:info unmapped original from weather agencies and gauges"
 		},
 		{
-			"value": "has:media -is:retweet profile_region:Texas (flood OR rain OR storm OR emergency)",
-			"tag": "media with Texas Profile geo and flood terms, not retweet"
-		},
-		{
-			"value": "-is:retweet profile_region:Texas (911 OR rescue OR ((need OR send) help) OR ((house OR street OR neighborhood) ((under water) OR flooded)) OR (address) OR (on roof))",
-			"tag": "Texas Profile geo with rescue and 911 mentions, not retweet"
+			"value": "-is:retweet has:geo (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
+			"tag": "theme:info unmapped original from local media"
 		}
-	]
-}
-
 ```
 
+
+
+
+
+
+
+## Previous query sets.
 
 The following ruleset was used for the initial prep-for-hackweek data pull. 
 
