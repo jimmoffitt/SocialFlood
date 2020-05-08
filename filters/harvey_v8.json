@@ -1,3 +1,4 @@
+```json
 {
 	"rules": [{
 			"value": "-is:retweet has:geo (from:HoustonOEM OR from:ReadyHarris OR from:ReadyHouston OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
@@ -67,3 +68,4 @@
 		}
 	]
 }
+```
