@@ -2,13 +2,14 @@
 
 Building filters/rules/queries for generating a collection of Tweets that help tell the story of how Hurricane Harvey unfolded on Twitter.  
 
-These rules are used with Twitter APIs to match and collect Tweets. These Tweets are currently loaded into a relational database. Reviewing database contents provides a second pass at Tweet collection curation (e.g. deleting Tweets that do not help tell the story). From the database, Tweet IDs (along with some supporting metadata such as available geographic coordinates) are then written to a JSON-based data resource used by the data visualization tool.
+These rules are used with Twitter APIs to match and collect Tweets for an "event explorer" prototype. These Tweets are currently loaded into a relational database. Reviewing database contents provides a second pass at Tweet collection curation (e.g. deleting Tweets that do not help tell the story). From the database, Tweet IDs (along with some supporting metadata such as available geographic coordinates) are then written to a single CSV data resource used by the data visualization tool.
 
-Building a rule set to match on Harvey Tweets is an iterative process. The rules below represent a first version and these will evolve as the collection is curated.
+Building a query set to match on Harvey Tweets is an iterative process. To date, at least eight iterations of the query set have been generated.
 
-### Rule fundamentals
+### Query fundamentals
 
 The "match Tweet" operators below are fundamental for surfacing Tweets of interest. 
+
 * **Keywords** | A set of words and phrases that characterize the Tweet as one of interest.
 * **#hashtags** | A set of hashtags related to the event of interest. 
 * **-is:retweet** | In most cases we are interested only in original Tweets. We can rehydrate Tweet is sharing metadata is needed.
@@ -22,20 +23,28 @@ The "match Tweet" operators below are fundamental for surfacing Tweets of intere
 Geo-tagged Tweets with photos and videos are the 'special sauce' for event visualization. These Tweets illustrate the powerful and actionable content that Twitter provides during these types of events.
   
   
-### Identifying Tweets identified by user as about Hurricane Harvey
+### Finding Tweets of interest. 
 
-The following set of keywords and hashtags are the initial set used to surface Tweets of interest. 
+The query sets described here were built to collect Tweets of interest about Hurricane Harvey. The goal was to find Tweets that would help tell the story of how Hurricane Harvey unfolded on Twitter. 
+
+For Hurricane Harvey, Tweets of interest where matched with a set of keywords and hashtags. We were also interested in Tweets posted by a set of "authoritative" Twitter accounts.  
+
+#### Event Tokens
+
+The following set of keywords and hashtags are the event "tokens" used to surface Tweets of interest. 
 
 (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)
-  
-## Verified accounts of interest
+
+
+## Twitter accounts of interest
 
 ### Weather
 + @NWSNHC
 + @NWSHouston
 + @NWSSanAntonio
-+ @JeffLindner1 
-+ (Add hurricane forecasts)
++ @JeffLindner1 - Harris County meterologist
++ @USGS_TexasRain, rain level data posted during flooding (automated).
++ @USGS_TexasFlood, river level data posted during flooding (automated).
 
 ### Operations, public comms
 + @HoustonOEM
@@ -43,14 +52,8 @@ The following set of keywords and hashtags are the initial set used to surface T
 + @HoustonFire 
 + @HCSOTexas
 + @HoustonTX
-+ @BrazoriaCounty 
-+ (Others from the public safety sector)
-+ Other Texas counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Chambers, Liberty, Montgomery, Colorado, Waller, Grimes, Washington, Cameron, Willacy, Kennedy
 
-## Other data
-+ @USGS_TexasRain, rainfall
-+ @USGS_TexasFlood, stage
-+ (Other forecast and modeling sources?)
++ Other Texas counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Chambers, Liberty, Montgomery, Colorado, Waller, Grimes, Washington, Cameron, Willacy, Kennedy
 
 ### Media
 + @HoustonChron
@@ -62,63 +65,8 @@ The following set of keywords and hashtags are the initial set used to surface T
 + @ktrhnews 
 + @abc13weather 
 + @KHOU
-+ (Others)
-
-## Example rules: 
-
-### Partners and cooperators
-
-Counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Chambers, Liberty, Montgomery, Colorado, Waller, Grimes, Washington, Cameron, Willacy, Kennedy
-
-```json
- {"value" : "-is:retweet (from:HoustonOEM OR from:ReadyHarris OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
-  "tag" : "partners, operations, public safety, public communication, originial posts"
- }
-```
-
-### Weather and meteorology 
-
-For Texas, this includes real-time rain and river level data.
-
-```json
- {"value" : "-is:retweet (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasRain OR from:JeffLindner1)",
-  "tag" : "meteorologic, originial posts"
- }
-```
-
-### Media
-
-```json
- {"value" : "-is:retweet (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
-  "tag" : "verified, originial posts"
- }
-``` 
-
-### Geo-tagged 'harvey' Tweets with media
-
-```json
- {"value" : "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
-  "tag" : "geo, media" 
- } 
-```
-
-### Profile-geo-tagged 'harvey' Tweets with media
-
-```json
- {"value" : "-is:retweet has:media profile_region:texas -has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
-  "tag" : "profile-geo, media"
- }
-```
-
-### Media hosted elsewhere, geo tagged
-
-```json
-{"value" : "-is:retweet profile_region:texas has:geo (url:instagram OR url:\"photos.google\") (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)",
-                "tag" : "harvey-mention, linked media, Texas profile, geo-tagged"
- }
- ```
  
- 
+
  
 ## JSON array of rules.
 
@@ -131,42 +79,7 @@ After many iterations, this set of themes were landed on:
 4) Pets
 5) Recovery
 
-
-```json
-#INFO THEME	
-	    
-	    {
-			"value": "-is:retweet has:geo (from:HoustonOEM OR from:ReadyHarris OR from:ReadyHouston OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
-			"tag": "theme:info mapped original Tweets from official agencies"
-		},
-		{
-			"value": "-is:retweet has:geo (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasFlood OR from:JeffLindner1)",
-			"tag": "theme:info mapped original from weather agencies and gauges"
-		},
-		{
-			"value": "-is:retweet has:geo (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
-			"tag": "theme:info mapped original from local media"
-		},
-
-#We also want these info Tweets in the dataset since they may be key for the storyline. 
-
- 
-	    {
-			"value": "-is:retweet -has:geo (from:HoustonOEM OR from:ReadyHarris OR from:ReadyHouston OR from:HoustonFire OR from:HoustonTX OR from:BrazoriaCounty OR from:HCSOTexas OR @USGS_Texas OR @FEMARegion6)",
-			"tag": "theme:info unmapped original Tweets from official agencies"
-		},
-		{
-			"value": "-is:retweet -has:geo (from:NWSNHC OR from:NWSHouston OR from:NWSSanAntonio OR from:USGS_TexasRain OR from:USGS_TexasFlood OR from:JeffLindner1)",
-			"tag": "theme:info unmapped original from weather agencies and gauges"
-		},
-		{
-			"value": "-is:retweet has:geo (from:HoustonChron OR from:DallesNews OR from:HoustonPress OR from:LakeHoustonNews OR from:ExpressNews OR from:HoustonPubMedia OR from:ktrhnews OR from:abc13weather OR from:KHOU)",
-			"tag": "theme:info unmapped original from local media"
-		}
-```
-
-
-
+### harvey_v8.json
 
 
 
