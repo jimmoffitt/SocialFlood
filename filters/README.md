@@ -6,7 +6,7 @@ These rules are used with Twitter APIs to match and collect Tweets for an "event
 
 Building a query set to match on Harvey Tweets is an iterative process. To date, at least eight iterations of the query set have been generated.
 
-### Query fundamentals
+## Query fundamentals
 
 The "match Tweet" operators below are fundamental for surfacing Tweets of interest. 
 
@@ -23,22 +23,22 @@ The "match Tweet" operators below are fundamental for surfacing Tweets of intere
 Geo-tagged Tweets with photos and videos are the 'special sauce' for event visualization. These Tweets illustrate the powerful and actionable content that Twitter provides during these types of events.
   
   
-### Finding Tweets of interest. 
+## Matching Tweets of interest. 
 
 The query sets described here were built to collect Tweets of interest about Hurricane Harvey. The goal was to find Tweets that would help tell the story of how Hurricane Harvey unfolded on Twitter. 
 
 For Hurricane Harvey, Tweets of interest where matched with a set of keywords and hashtags. We were also interested in Tweets posted by a set of "authoritative" Twitter accounts.  
 
-#### Event Tokens
+### Event Tokens
 
 The following set of keywords and hashtags are the event "tokens" used to surface Tweets of interest. 
 
 (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR @HarveyRescue OR #houwx OR #txwx)
 
 
-## Twitter accounts of interest
+### Twitter accounts of interest
 
-### Weather
+#### Weather
 + @NWSNHC
 + @NWSHouston
 + @NWSSanAntonio
@@ -46,7 +46,7 @@ The following set of keywords and hashtags are the event "tokens" used to surfac
 + @USGS_TexasRain, rain level data posted during flooding (automated).
 + @USGS_TexasFlood, river level data posted during flooding (automated).
 
-### Operations, public comms
+#### Operations, public comms
 + @HoustonOEM
 + @ReadyHarris 
 + @HoustonFire 
@@ -55,7 +55,7 @@ The following set of keywords and hashtags are the event "tokens" used to surfac
 
 + Other Texas counties to add: Matagorda, Calhoun, Refugio, Galveston, Fort Bend, Wharton, Chambers, Liberty, Montgomery, Colorado, Waller, Grimes, Washington, Cameron, Willacy, Kennedy
 
-### Media
+#### Regional media
 + @HoustonChron
 + @DallesNews
 + @HoustonPress 
@@ -67,10 +67,10 @@ The following set of keywords and hashtags are the event "tokens" used to surfac
 + @KHOU
  
 
- 
-## JSON array of rules.
+## Story themes
 
-Putting it all together. In the case of the 'event explorer' prototype, different *themes* can be displayed. These themes are a set of Tweet collections that describe different types of conversations that happened during Hurricane Harvey.
+
+In the case of the 'event explorer' prototype, different *themes* can be displayed. These themes are a set of Tweet collections that describe different types of conversations that happened during Hurricane Harvey.
 
 After many iterations, this set of themes were landed on:
 1) Info
@@ -78,6 +78,11 @@ After many iterations, this set of themes were landed on:
 3) SOS
 4) Pets
 5) Recovery
+
+
+## JSON array of rules.
+
+Putting it all together. 
 
 ### harvey_v8.json
 
