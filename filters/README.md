@@ -1,10 +1,18 @@
 # Generating a collection of Hurricane Harvey Tweets 
 
-Building filters/rules/queries for generating a collection of Tweets that help tell the story of how Hurricane Harvey unfolded on Twitter.  
+This doc explores building filters/rules/queries for generating a collection of Tweets that help tell the story of how Hurricane Harvey unfolded on Twitter.  
 
-These rules are used with Twitter APIs to match and collect Tweets for an "event explorer" prototype. These Tweets are currently loaded into a relational database. Reviewing database contents provides a second pass at Tweet collection curation (e.g. deleting Tweets that do not help tell the story). From the database, Tweet IDs (along with some supporting metadata such as available geographic coordinates) are then written to a single CSV data resource used by the data visualization tool.
+These queries are used with Twitter endpoints to match and collect Tweets for a 'storytelling' prototype. This 'event explorer' prototype is a web-app that hosts event-based Tweets, and enables users to explore how different event *themes* unfolded on Twitter. For the prototype, Hurricane Harvey is the event of interest, and the event's themes are 'information', 'rescues/sos', 'damage' reports, 'pets', and 'recovery.'
 
-Building a query set to match on Harvey Tweets is an iterative process. To date, at least eight iterations of the query set have been generated.
+The web-app supports navigating Tweet collections on a map, and each theme can be presented in a 'storyline' view. Mapped Tweets focus mainly on Tweets that were 'geo-tagged' by the author, and there is also available support for geo-referencing Tweets according to the Twitter account's "home" location.  
+
+The web-app also supports exploring event themes in a 'storyline' mode. This mode is much like a Twitter Moment, and consists of a (smaller) collection of highly curated Tweets that help tell a story. The storyline mode enables an alternative display, one that includes Tweets with no geographic metadata. 
+
+Collected Tweets are currently loaded into a relational database. Once in the database, Tweet collections can be further curated. The process of *themeing* Tweets includes a process of designing queries that use "tags" that auto-assign a theme to a matched Tweet.   
+
+Reviewing database contents provides a second pass at Tweet collection curation (e.g. deleting Tweets that do not help tell the story). From the database, Tweet IDs (along with some supporting metadata such as available geographic coordinates) are then written to a single CSV data resource used by the data visualization tool.
+
+Building a query set to match on Harvey Tweets is an iterative process. To date, at least nine iterations of the query set have been generated. The latest version includes example tags that indicate what theme a Tweet is assigned to, along with other "switches" that indicate Tweet characteristics. Current example include whether the Tweet has native or linked media attached, whether the Tweet is geo-tagged, or whether only the profile geo is available.  
 
 ## Query fundamentals
 
