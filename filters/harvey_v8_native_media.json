@@ -1,0 +1,12 @@
+{
+	"rules": [
+		{
+			"value": "-is:retweet has:media has:geo (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR #HOUwx OR #TXwx) (damage OR flood OR rain OR storm OR emergency) -(911 OR rescue OR cajunnavy OR ((need OR send) help) OR ((house OR street OR neighborhood) ((under water) OR flooded)) OR (address) OR (on roof)) -(animals OR pets OR mascotas OR cat OR cats OR gato OR dog OR dogs OR perro OR horse OR horses OR caballo) -(victims OR recovery OR volunteer OR \"provide help\" OR donate OR donation OR shelters OR \"give money\" OR \"raise money\")",
+			"tag": "theme:damage mapped native media"
+		},
+		{
+			"value": "-is:retweet has:media -has:geo profile_region:texas (harvey OR hurricane OR #HarveySOS OR #Harvey2017 OR #HarveyStorm OR #HoustonFlood OR #HoustonFlood1 OR #HoustonFloods OR #HoustonFlooding OR #HurricaneHarvey OR #HelpHouston OR #Flood OR #HarveyRescue OR #HOUwx OR #TXwx) (damage OR flood OR rain OR storm OR emergency) -(911 OR rescue OR cajunnavy OR ((need OR send) help) OR ((house OR street OR neighborhood) ((under water) OR flooded)) OR (address) OR (on roof)) -(animals OR pets OR mascotas OR cat OR cats OR gato OR dog OR dogs OR perro OR horse OR horses OR caballo) -(victims OR recovery OR volunteer OR \"provide help\" OR donate OR donation OR shelters OR \"give money\" OR \"raise money\")",
+			"tag": "theme:damage unmapped texas home native media"
+		}
+	]
+}
