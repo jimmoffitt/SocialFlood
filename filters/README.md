@@ -77,22 +77,47 @@ The following set of keywords and hashtags are the event "tokens" used to surfac
 
 ## Story themes
 
-
 In the case of the 'event explorer' prototype, different *themes* can be displayed. These themes are a set of Tweet collections that describe different types of conversations that happened during Hurricane Harvey.
 
-After many iterations, this set of themes were landed on:
-1) Info
-2) Damage
-3) SOS
-4) Pets
-5) Recovery
-
+After many iterations, this set of themes/collections were landed on:
+1) "info" - Mostly PSAs and meteorlogical data, illustrating Tweets can provide effective visualizations. 
+2) "SOS" - Communications on Tweet focused on rescues.
+3) "damage" - Mostly crowd-sourced observations of the hurricane, focusing on geo-tagged Tweets that were shared in real-time during the event.  
+4) "animals" - Rescuing and sheltering animals, both pets and livestock, became a major topic of discussion on Twitter. 
+5) "recovery" - Even during the hurricane, conversations of rebuilding, donating, volunteering, and recovery emerged.  
 
 ## JSON array of rules.
 
 Putting it all together. 
 
-### harvey_v8.json
+### Current query/rule/filter set.
+
+Notes: 
+
++ Version 9 was the first to applying themeing labels at the query level, by using "tags" to assign themes.
+  + "tag": "theme:info mapped original Tweets from official agencies"
+  + "tag": "theme:info mapped original from weather agencies and gauges"
+  + "tag": "theme:info mapped original from local media"
+  + "tag": "theme:info unmapped original Tweets from official agencies"
+  + "tag": "theme:info unmapped original from weather agencies and gauges"
+  + "tag": "theme:info unmapped original from local media"
+  + "tag": "theme:info mapped verified texas home"
+  + "tag": "theme:info unmapped verified texas home"
+
+  + "tag": "theme:sos mapped"
+  + "tag": "theme:sos unmapped"
+  
+  + "tag": "theme:damage mapped native media"
+  + "tag": "theme:damage unmapped texas home native media"
+  + "tag": "theme:damage mapped linked media" 
+  + "tag": "theme:damage unmapped texas home linked media"
+
++ Version 10 will:
+  + Filter out more noise by applying developed SQL queries. (Moving more clean-up up to the query level)
+  + Rely less on profile geo data. To include a profile-location-only Tweet, can it meet more matching requirements before being included. Must have media? Must be verified? 
+
+
+
 
 
 
