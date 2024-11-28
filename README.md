@@ -1,7 +1,7 @@
 SocialFlood
 ===========
 
-This is a snapshot of some passion project back many years ago, not long after the historic Colorado Flood in 2013. 
+This is a snapshot of some passion projects from many years ago, not long after the historic Colorado Flood in 2013. 
 
 I had posted a series of blog posts that focused on two professional interests: early warning systems and the Twitter developer platform. The posts started with a discussion of looking for rainfall 'signals' in Twitter data, then discussed potential roles the Twitter network could play in early-warning systems, and finally wrapped up with how the 2013 Colorado Flood unfolded on Twitter...
  
