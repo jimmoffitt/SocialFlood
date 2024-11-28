@@ -1,12 +1,13 @@
 SocialFlood
 ===========
-A collection of things related to display and analysis around the 2013 Colorado Flood.
 
-I posted a series of blog posts that focued on two professional interests: early warning systems and the Twitter Data Platform. The following posts start with a discussion of looking for a rainfall 'signal' in Twitter data, then discuss potential roles the Twitter network could play in early-warning systems, then wrap up with how the 2013 Colorado Flood unfolded on Twitter...
+This is a snapshot of some passion project back many years ago, not long after the historic Colorado Flood in 2013. 
+
+I had posted a series of blog posts that focused on two professional interests: early warning systems and the Twitter developer platform. The posts started with a discussion of looking for rainfall 'signals' in Twitter data, then discussed potential roles the Twitter network could play in early-warning systems, and finally wrapped up with how the 2013 Colorado Flood unfolded on Twitter...
  
-The research behind these blog posts included a variety of software tools that helped harvest both Twitter and meteorlogical data, [store that data in a MySQL database](http://support.gnip.com/articles/relational-databases-part-1.html), and then perform the time-series analysis presented.
+The data analysis behind these blog posts included a variety of software tools that helped harvest both Twitter and meteorological data, [store that data in a MySQL database](http://support.gnip.com/articles/relational-databases-part-1.html), and then perform the time-series analysis presented.
 
-So far these tools have fallen out of this effort:
+These tools fell out of this project:
 
 + [EventBinner](https://github.com/jimmoffitt/SocialFlood/tree/master/EventBinner): Ruby code that pulls data from MySQL and outputs event (Geo)JSON data.  Combines Twitter and 'external' data into an integrated source file for project viewers. 
 + [EventViewer](https://github.com/jimmoffitt/SocialFlood/tree/master/EventViewer): Web map-based event viewer. Source 'maperator' project lives here: https://github.com/blehman/maperator
